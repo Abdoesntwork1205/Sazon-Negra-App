@@ -1,0 +1,216 @@
+/* Estilos generales con animación de fondo */
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #161616;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(194, 153, 87, 0.08) 0%, transparent 25%),
+        radial-gradient(circle at 90% 80%, rgba(192, 130, 92, 0.08) 0%, transparent 25%);
+    background-size: 300% 300%;
+    animation: gradientFlow 18s ease infinite;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Contenedor principal con borde animado */
+.login-container {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 3px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #d16c01, #f4af23, #f69311);
+    background-size: 200% 200%;
+    animation: borderPulse 8s ease infinite;
+    box-shadow: 0 15px 35px rgba(192, 147, 92, 0.2);
+}
+
+@keyframes borderPulse {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Formulario interior */
+.login-form {
+    background-color: rgba(255, 255, 255, 0.96);
+    border-radius: 15px;
+    padding: 2.5rem;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Icono con borde animado */
+#login-icon {
+    width: auto;
+    height: 160px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 1.8rem;
+    border: 5px solid transparent;
+    border-radius: 50%;
+    padding: 8px;
+    background: 
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(135deg, #ffc800, #c8802e) border-box;
+    animation: iconGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes iconGlow {
+    from { box-shadow: 0 0 10px rgba(181, 120, 74, 0.3); }
+    to { box-shadow: 0 0 20px rgba(186, 157, 79, 0.4); }
+}
+
+/* Título con efecto sutil */
+.login-form h2 {
+    color: #d78502;
+    text-align: center;
+    margin-bottom: 1.8rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.login-form h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #fdac14, #110d04);
+    border-radius: 3px;
+}
+
+/* Campos del formulario - CORREGIDO (un solo ojo) */
+.input-group-text {
+    background-color: #f5f7ff;
+    border: 1px solid #e0e0e0;
+    color: #ffc800;
+    transition: all 0.3s;
+}
+
+.input-group #clave {
+    border-right: none;
+}
+
+.toggle-password {
+    background-color: #f5f7ff !important;
+    border: 1px solid #e0e0e0 !important;
+    border-left: none !important;
+    color: #ffc800 !important;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.toggle-password:hover {
+    background-color: #f6f1e8 !important;
+    color: #ff9114 !important;
+}
+
+/* Efectos para campos de formulario */
+.form-control {
+    background-color: #f5f7ff;
+    border: 1px solid #e0e0e0;
+    color: #333;
+    transition: all 0.3s;
+}
+
+.form-control:focus {
+    border-color: #605f00;
+    box-shadow: 0 0 0 0.25rem rgba(194, 139, 87, 0.2);
+    background-color: #fff;
+}
+
+/* Botón con efecto de onda */
+.btn-primary {
+    background: linear-gradient(135deg, #ffc800, #d88f06);
+    border: none;
+    padding: 12px;
+    font-weight: 600;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #ffe121, #252306);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(181, 120, 74, 0.3);
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%, -50%);
+    transform-origin: 50% 50%;
+}
+
+.btn-primary:focus:not(:active)::after {
+    animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+    0% { transform: scale(0, 0); opacity: 0.5; }
+    20% { transform: scale(25, 25); opacity: 0.3; }
+    100% { opacity: 0; transform: scale(40, 40); }
+}
+
+/* Enlaces con efecto */
+.text-decoration-none {
+    color: #e5a417;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+    display: inline-block;
+}
+
+.text-decoration-none:hover {
+    color: #ffc800;
+    text-decoration: none;
+}
+
+.text-decoration-none::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #d88f06;
+    transition: width 0.3s ease;
+}
+
+.text-decoration-none:hover::after {
+    width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .login-form {
+        padding: 1.8rem;
+    }
+    
+    #login-icon {
+        height: 140px;
+    }
+}

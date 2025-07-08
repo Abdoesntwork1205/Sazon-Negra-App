@@ -1,0 +1,283 @@
+/* Estilos generales con animación de fondo */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #161616;
+    background-image: 
+        radial-gradient(circle at 10% 20%,  0%, transparent 25%),
+        radial-gradient(circle at 90% 80%, rgba(192, 130, 92, 0.08) 0%, transparent 25%);
+    background-size: 300% 300%;
+    animation: gradientFlow 18s ease infinite;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Contenedor principal */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* Contenedor del formulario animado */
+.login-container {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 3px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #d16c01, #f4af23, #f69311);
+    background-size: 200% 200%;
+    animation: borderPulse 8s ease infinite;
+    box-shadow: 0 15px 35px rgba(192, 147, 92, 0.2);
+}
+
+@keyframes borderPulse {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Formulario interior */
+.login-form {
+    background-color: rgba(255, 255, 255, 0.96);
+    border-radius: 15px;
+    padding: 2.5rem;
+    width: 100%;
+    height: 100%;
+    color: #333;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilo del icono */
+#login-icon {
+    width: auto;
+    height: 180px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 2rem;
+    border: 5px solid transparent;
+    border-radius: 50%;
+    padding: 8px;
+    background: 
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(135deg, #ffc800, #c8802e) border-box;
+    animation: iconGlow 3s ease-in-out infinite alternate;
+    filter: drop-shadow(0 0 15px rgba(181, 120, 74, 0.3));
+    transition: transform 0.3s ease;
+}
+
+@keyframes iconGlow {
+    from { box-shadow: 0 0 10px rgba(181, 120, 74, 0.3); }
+    to { box-shadow: 0 0 20px rgba(186, 157, 79, 0.4); }
+}
+
+#login-icon:hover {
+    transform: scale(1.05);
+}
+
+/* Estilos del formulario */
+.login-form h2 {
+    color: #d78502;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    font-size: 1.8rem;
+    position: relative;
+}
+
+.login-form h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #fdac14, #110d04);
+    border-radius: 3px;
+}
+
+/* Campos del formulario */
+.input-field input {
+    color: #333 !important;
+    border-bottom: 1px solid #ffc800 !important;
+}
+
+.input-field input:focus {
+    border-bottom: 1px solid #d88f06 !important;
+    box-shadow: 0 1px 0 0 #d88f06 !important;
+}
+
+.input-field label {
+    color: #ffc800 !important;
+}
+
+.input-field input:focus + label {
+    color: #d88f06 !important;
+}
+
+.input-field .prefix {
+    color: #ffc800 !important;
+}
+
+.input-field .prefix.active {
+    color: #d88f06 !important;
+}
+
+/* Toggle de contraseña */
+.toggle-password, .toggle-confirm-password {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #ffc800 !important;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.toggle-password:hover, .toggle-confirm-password:hover {
+    color: #ab7c39 !important;
+}
+
+/* Botón de registro */
+.btn.purple.darken-3 {
+    background: linear-gradient(135deg, #ffc800, #d88f06) !important;
+    width: 60%;
+    min-width: 180px;
+    padding: 0 30px;
+    height: 45px;
+    line-height: 45px;
+    text-transform: none;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    border-radius: 10px !important;
+    display: inline-block;
+    color: white !important;
+    border: none !important;
+}
+
+.btn.purple.darken-3:hover {
+    background: linear-gradient(135deg, #bf924a, #b27a4c) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(181, 120, 74, 0.3);
+}
+
+/* Estilos para el calendario */
+.datepicker-date-display {
+    background: linear-gradient(135deg, #ffc800, #d88f06) !important;
+}
+
+.datepicker-table td.is-selected {
+    background: linear-gradient(135deg, #ffc800, #d88f06) !important;
+    color: #fff !important;
+}
+
+.datepicker-table td.is-today {
+    color: #ffc800 !important;
+}
+
+.datepicker-cancel, 
+.datepicker-clear, 
+.datepicker-today, 
+.datepicker-done {
+    color: #ffc800 !important;
+}
+
+.datepicker-modal {
+    background-color: #f8f9fa !important;
+}
+
+.datepicker-controls .select-year input,
+.datepicker-controls .select-month input {
+    color: #333 !important;
+}
+
+.datepicker-table th {
+    color: #ffc800 !important;
+}
+
+.datepicker-table td {
+    color: #333 !important;
+}
+
+.datepicker-table td.disabled {
+    color: #bbb !important;
+}
+
+/* Validación */
+.is-invalid {
+    border-color: #dc3545 !important;
+}
+
+.invalid-feedback {
+    color: #dc3545;
+    display: none;
+    font-size: 0.875em;
+}
+
+.was-validated .form-control:invalid ~ .invalid-feedback,
+.form-control.is-invalid ~ .invalid-feedback {
+    display: block;
+}
+
+/* SweetAlert */
+.swal2-popup {
+    background: #f8f9fa !important;
+    color: #333 !important;
+}
+.swal2-title, .swal2-content {
+    color: #333 !important;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .login-container {
+        max-width: 90%;
+    }
+    
+    #login-icon {
+        height: 150px;
+    }
+    
+    .login-form {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .login-container {
+        max-width: 95%;
+    }
+    
+    #login-icon {
+        height: 130px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .login-form {
+        padding: 1.5rem;
+    }
+    
+    .login-form h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+}

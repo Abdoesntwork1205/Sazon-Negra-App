@@ -1,0 +1,375 @@
+/* Cambiar el color primario a azul */
+:root {
+  --primario: #e78a21;
+  --primario-dark: #ad711c;
+  --primario-rgb: 235, 132, 1;
+}
+
+/* checkout-modal.css */
+.checkout-modal {
+  border-radius: 12px;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.checkout-header {
+  background: linear-gradient(135deg, var(--primario), var(--primario-dark));
+  color: white;
+  border-bottom: none;
+  padding: 1.5rem 1.5rem 0.5rem; /* Reducir padding inferior */
+  position: relative;
+}
+
+.checkout-stepper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  margin-bottom: 0.5rem; /* Reducido de 1rem a 0.5rem */
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s;
+  z-index: 2;
+  flex: 1;
+}
+
+.step-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.2);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  transition: all 0.3s ease;
+}
+
+.step.active .step-circle {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  background-color: #ff0400;
+  color: white;
+  font-weight: bold;
+}
+
+.step-label {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-bottom: 0; /* Asegurar que no añada espacio extra */
+
+}
+
+.step.active .step-label {
+  color: white;
+  font-weight: 600;
+}
+
+.step-connector {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: rgba(255,255,255,0.2);
+  z-index: 1;
+}
+
+.step-content {
+  padding: 1rem 0;
+  display: none;
+}
+
+.step-content.active {
+  display: block;
+}
+
+.step-title {
+  color: var(--primario);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Estilo para el grupo de nacionalidad + cédula */
+.input-group .form-floating {
+    flex-grow: 1;
+}
+.input-group .form-select {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.input-group .form-control {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+}
+
+.delivery-method {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+  margin-bottom: 15px;
+}
+
+.delivery-method i {
+  margin-right: 8px;
+  color: #6c757d;
+}
+
+.delivery-address, .delivery-notes {
+  margin-top: 8px;
+  padding-left: 24px;
+}
+
+.references, .coords {
+  margin-top: 5px;
+  color: #6c757d;
+}
+
+/* Estilos para el stepper */
+.step.completed {
+  color: #28a745;
+}
+.step.completed .step-circle {
+  background-color: #28a745;
+  color: white;
+}
+.step.skipped .step-circle {
+  background-color: #6c757d;
+  color: white;
+  position: relative;
+}
+
+.step.skipped .step-circle:after {
+  content: "⤴";
+  position: absolute;
+  right: -15px;
+  top: -5px;
+  font-size: 12px;
+}
+.step.skipped .step-label {
+  color: #6c757d;
+}
+.step.active .step-circle {
+  background-color: #ff0400;
+  color: white;
+  font-weight: bold;
+}
+.step.skipped.completed .step-circle {
+  background-color: #6c757d;
+}
+
+
+/* Estilos para los métodos de pago */
+.payment-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.payment-option input[type="radio"] {
+  display: none;
+}
+
+.payment-card {
+  
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.payment-card:hover {
+  border-color: #adb5bd;
+}
+
+.payment-option input:checked + label .payment-card {
+  border-color: var(--primario);
+  background-color: rgba(var(--primario-rgb), 0.05);
+
+}
+
+.payment-icon {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(var(--primario-rgb), 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  color: var(--primario);
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+
+}
+
+.payment-info h6 {
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.payment-info small {
+  color: #6c757d;
+  font-size: 0.85rem;
+}
+
+.payment-details {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  border-left: 4px solid #fda50d;
+}
+
+#payment-confirmation-section {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  border-left: 4px solid var(--primario);
+}
+
+.payment-confirm-details {
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #dee2e6;
+}
+
+#payment-proof {
+  padding: 0.5rem;
+  border: 1px dashed #adb5bd;
+  border-radius: 6px;
+}
+
+#payment-proof:hover {
+  border-color: var(--primario);
+}
+
+/* Estilos para el resumen */
+.order-summary {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.summary-header {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.delivery-info, .payment-selected {
+  flex: 1;
+}
+
+.summary-header h6 {
+  color: var(--primario);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.summary-header h6 i {
+  margin-right: 0.5rem;
+}
+
+.summary-items {
+  margin-bottom: 1.5rem;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.summary-item:last-child {
+  border-bottom: none;
+}
+
+.summary-total {
+  border-top: 1px solid #e9ecef;
+  padding-top: 1rem;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.grand-total {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.terms-check {
+  margin-top: 1.5rem;
+  padding-left: 1.75rem;
+}
+
+.terms-check .form-check-input {
+  margin-left: -1.75rem;
+}
+
+.checkout-footer {
+  border-top: none;
+  padding: 1rem 1.5rem;
+  background-color: #f8f9fa;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animated {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+.payment-methods {
+  transition: all 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .summary-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .checkout-stepper {
+    margin-bottom: 0.5rem;
+  }
+  
+  .step-label {
+    display: none;
+  }
+}

@@ -1,0 +1,535 @@
+:root {
+    --primary: #ff6b00;
+    --primary-light: #ff8c42;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #1ca1d1;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --dark: #343a40;
+    --light: #f8f9fa;
+    --body-bg: #f5f7fa;
+    --card-bg: #ffffff;
+    --sidebar-bg: #503e2c;
+    --text-dark: #2d2d2d;
+    --text-light: #f8f9fa;
+    --transition: all 0.3s ease;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+    --card-border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--body-bg);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    transition: var(--transition);
+}
+
+.top-bar {
+    background: var(--card-bg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    border-radius: 0;
+    transition: var(--transition);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.top-bar:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.notifications {
+    position: relative;
+    cursor: pointer;
+}
+
+.notifications .badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: var(--danger);
+    color: rgb(245, 245, 245);
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 10px;
+}
+
+
+
+
+/* Badges de estado */
+.badge {
+    padding: 0.5em 0.75em;
+    font-weight: 500;
+    border-radius: 0.25rem;
+    font-size: 0.85em;
+}
+
+/* ============================================= */
+/* ESTILOS PRINCIPALES DEL FORMULARIO DE PRODUCTOS */
+/* ============================================= */
+
+#addProductForm {
+    background-color: var(--card-bg);
+    padding: 1.25rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--card-shadow);
+    border: var(--card-border);
+    transition: var(--transition);
+}
+
+#addProductForm:hover {
+    box-shadow: var(--card-shadow-hover);
+}
+
+/* ================================== */
+/* AJUSTES DE ESPACIADO Y DISPOSICIÓN */
+/* ================================== */
+
+#addProductForm .row {
+    margin-bottom: -0.5rem; /* Compensación para margen negativo */
+    align-items: flex-end; /* Alinea los elementos al fondo */
+}
+
+#addProductForm .col-md-2,
+#addProductForm .col-md-3,
+#addProductForm .col-md-6 {
+    margin-bottom: 0.75rem;
+    padding-right: 0.5rem; /* Reducido el espaciado entre columnas */
+    padding-left: 0.5rem;
+}
+
+/* Ajuste específico para el select2 y su input adyacente */
+#addProductForm .col-md-3:nth-child(2) { /* Select de categoría */
+    padding-right: 0.35rem;
+}
+
+#addProductForm .col-md-2:nth-child(3) { /* Input de precio */
+    padding-left: 0.35rem;
+}
+
+/* ====================== */
+/* ESTILOS PARA EL SELECT2 */
+/* ====================== */
+
+
+/* Contenedor principal del Select2 */
+.select2-container {
+    width: 100% !important;
+    margin-bottom: 0;
+}
+
+/* Estilos base para la selección */
+.select2-container--default .select2-selection--single {
+    height: 38px;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 8px !important;
+    padding: 5px;
+    background-color: var(--card-bg);
+    transition: var(--transition);
+}
+
+/* Flecha del dropdown */
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 36px;
+    right: 8px;
+}
+
+/* Texto mostrado */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: var(--text-dark);
+    line-height: 26px;
+    padding-left: 12px;
+}
+
+/* Dropdown - contenedor principal */
+.select2-dropdown {
+    background-color: var(--card-bg) !important;
+    border: var(--card-border) !important;
+    box-shadow: var(--card-shadow-hover) !important;
+    border-radius: 0 0 8px 8px !important;
+    z-index: 1000 !important;
+    width: 0% !important; /* Fuerza el ancho al 100% del contenedor padre */
+    min-width: 0 !important; /* Permite que se ajuste al ancho del trigger */
+}
+
+/* Dropdown en posición normal (debajo) */
+.select2-container--default .select2-dropdown {
+    width: 0% !important;        /* Mismo ancho que el input */
+    min-width: 0 !important;       /* Permite reducirse al ancho del contenedor */
+    max-width: 23% !important;    /* Nunca más ancho que el input */
+    left: 0 !important;           /* Alineación perfecta con el input */
+}
+
+/* Dropdown en posición superior (cuando no hay espacio abajo) */
+.select2-container--default .select2-dropdown--above {
+    width: 50% !important;
+    min-width: 0 !important;
+    margin-bottom: 4px;
+}
+
+/* Elementos del dropdown */
+.select2-results__option {
+    padding: 8px 12px;
+}
+
+/* Elemento destacado (hover) */
+.select2-container--default .select2-results__option--highlighted {
+    background-color: var(--primary) !important;
+    color: white !important;
+}
+
+/* Elemento seleccionado */
+.select2-container--default .select2-results__option--selected {
+    background-color: rgba(39, 174, 252, 0.1) !important;
+    color: var(--text-dark) !important;
+}
+
+/* Estado focus */
+.select2-container--default .select2-selection--single:focus {
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 0.25rem rgba(255, 107, 0, 0.25) !important;
+}
+
+/* ============================================= */
+/* ESTILOS ESPECÍFICOS PARA SELECT2 EN EL MODAL */
+/* ============================================= */
+
+/* Contenedor principal del Select2 en modal */
+#editProductModal .select2-container {
+    width: 100% !important;
+    z-index: 1060; /* Asegura que aparezca sobre el modal */
+}
+
+/* Dropdown del Select2 en modal */
+#editProductModal .select2-dropdown {
+    background-color: white !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important;
+    border-radius: 0.375rem !important;
+    margin-top: 4px !important;
+    z-index: 1061 !important; /* Mayor que el modal */
+}
+
+/* Input del Select2 en modal */
+#editProductModal .select2-selection {
+    height: 38px !important;
+    border: 1px solid #ced4da !important;
+    border-radius: 0.375rem !important;
+    padding: 0.375rem 0.75rem !important;
+    background-color: white !important;
+}
+
+/* Texto mostrado en el Select2 */
+#editProductModal .select2-selection__rendered {
+    line-height: 1.5 !important;
+    color: #495057 !important;
+    padding-left: 0 !important;
+}
+
+/* Flecha del dropdown */
+#editProductModal .select2-selection__arrow {
+    height: 36px !important;
+    right: 8px !important;
+}
+
+/* Elementos de la lista desplegable */
+#editProductModal .select2-results__option {
+    padding: 0.5rem 1rem !important;
+}
+
+/* Elemento seleccionado */
+#editProductModal .select2-results__option--selected {
+    background-color: rgba(0, 123, 255, 0.1) !important;
+    color: #495057 !important;
+}
+
+/* Elemento destacado (hover) */
+#editProductModal .select2-results__option--highlighted {
+    background-color: #ff0400 !important;
+    color: white !important;
+}
+
+/* ============================================= */
+/* AJUSTES ESPECÍFICOS PARA EL MODAL */
+/* ============================================= */
+
+#editProductModal .modal-dialog {
+    max-height: 85vh; /* Limita la altura máxima del modal */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#editProductModal .modal-content {
+    background-color: white !important;
+    border-radius: 0.5rem !important;
+    overflow: hidden !important;
+    max-height: 80vh; /* Altura máxima del contenido */
+    display: flex;
+    flex-direction: column;
+}
+
+#editProductModal .modal-body {
+    background-color: white !important;
+    padding: 1.5rem;
+    overflow-y: auto; /* Habilita scroll solo cuando sea necesario */
+    flex-grow: 1;
+}
+
+#editProductModal .modal-footer {
+    background-color: white;
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+}
+
+/* Asegura que el botón de guardar sea siempre visible */
+#editProductModal .btn-primary {
+    width: 100%;
+    padding: 0.5rem;
+    font-weight: 500;
+}
+
+/* Ajuste para el contenedor del formulario */
+#editProductForm {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Ajusta el espacio entre elementos del formulario */
+#editProductForm .mb-3 {
+    margin-bottom: 1rem !important;
+}
+
+/* ============================================= */
+/* CONFIGURACIÓN DEL DROPDOWN PARENT */
+/* ============================================= */
+
+/* Esto es crucial para el correcto funcionamiento */
+.select2-container--open .select2-dropdown--below {
+    position: absolute !important;
+    width: 50% !important;
+    top: 20% !important;
+    left: 0 !important;
+    margin-top: 4px !important;
+}
+.select2-container--default .select2-dropdown {
+    width: 50% !important;
+    margin-left: 0%; /* Centrado en móviles */
+}
+
+
+/* Asegura que el dropdown no se corte */
+.modal {
+    overflow: visible !important;
+}
+
+.modal-dialog {
+    overflow-y: initial !important;
+}
+
+/* ========================== */
+/* ESTILOS PARA LOS CONTROLES */
+/* ========================== */
+
+.form-control, .input-group-text {
+    height: 38px;
+    border-radius: 8px !important;
+    transition: var(--transition);
+}
+
+.input-group {
+    flex-wrap: nowrap; /* Evita que los elementos se envuelvan */
+}
+
+.input-group-text {
+    background-color: rgba(255, 107, 0, 0.1);
+    color: var(--primary);
+    border-color: rgba(0, 0, 0, 0.1);
+    min-width: 40px; /* Ancho consistente para el símbolo $ */
+    justify-content: center;
+}
+
+
+
+/* ======================= */
+/* VERSIÓN MÓVIL (RESPONSIVE) */
+/* ======================= */
+
+@media (max-width: 768px) {
+    #addProductForm .row {
+        flex-direction: column;
+    }
+
+        .top-bar {
+        padding: 10px 15px;
+    }
+    
+    #addProductForm .col-md-2, 
+    #addProductForm .col-md-3, 
+    #addProductForm .col-md-6 {
+        width: 100%;
+        margin-bottom: 0.75rem;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    
+    /* Restablece los ajustes específicos para móvil */
+    #addProductForm .col-md-3:nth-child(2),
+    #addProductForm .col-md-2:nth-child(3) {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    
+    .select2-container--default {
+        margin-bottom: 0.75rem;
+    }
+
+    .select2-container--default .select2-dropdown {
+        width: auto !important;
+        min-width: calc(100% - 30px) !important; /* 30px de margen lateral */
+        max-width: 100% !important;
+        left: 15px !important;
+        right: 15px !important;
+    }
+    
+    .select2-container--open .select2-dropdown--below {
+        width: auto !important;
+        min-width: calc(100% - 30px) !important;
+        max-width: 100% !important;
+        left: 15px !important;
+        right: 15px !important;
+        top: 100% !important; /* Posición correcta debajo del input */
+    }
+    
+    /* Asegura que el texto no se corte */
+    .select2-results__option {
+        white-space: normal !important;
+        word-wrap: break-word;
+    }
+}
+
+
+
+
+
+
+/* ===================== */
+/* ANIMACIONES Y EXTRAS */
+/* ===================== */
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(10px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+#productsTable tbody tr {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0; /* Inicialmente invisible para que la animación funcione */
+}
+
+
+.product-row-animation {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+
+
+/* ===================== */
+/* SWEETALERT2 PERSONALIZADO */
+/* ===================== */
+
+.swal2-popup {
+    border-radius: 12px !important;
+    box-shadow: var(--card-shadow-hover) !important;
+    border: var(--card-border) !important;
+    background: var(--card-bg) !important;
+}
+
+.swal2-toast {
+    background: var(--card-bg) !important;
+    color: var(--text-dark) !important;
+    box-shadow: var(--card-shadow-hover) !important;
+    border: var(--card-border) !important;
+    border-left: 4px solid var(--primary) !important;
+}
+
+/* ===================== */
+/* Tabla */
+/* ===================== */
+
+
+#productsTable {
+    --bs-table-bg: transparent;
+    --bs-table-striped-bg: rgba(255, 107, 0, 0.03);
+    --bs-table-hover-bg: rgba(255, 107, 0, 0.08);
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+}
+
+#productsTable thead th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    color: var(--secondary);
+    border-bottom: 2px solid var(--primary);
+    background-color: rgba(255, 107, 0, 0.05);
+    padding: 1rem 1.25rem;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+#productsTable tbody td {
+    padding: 1rem 1.25rem;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+#productsTable tbody tr {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    border-left: 3px solid transparent;
+    backface-visibility: hidden;
+}
+
+#productsTable tbody tr:hover {
+    background: rgba(255, 107, 0, 0.08) !important;
+    transform: translateX(5px);
+    border-left: 3px solid var(--primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Imágenes de productos */
+.product-image {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    background-color: #f8f9fa;
+}
+
+.product-image:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

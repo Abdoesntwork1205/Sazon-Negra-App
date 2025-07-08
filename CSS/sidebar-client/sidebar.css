@@ -1,0 +1,267 @@
+@import url('../componentes/top-bar.css');
+@import url('../componentes/floating-buttons.css');
+@import url('../componentes/footer.css');
+@import url('../componentes/order-sidebar.css');
+@import url('../componentes/preloader.css');
+@import url('../componentes/product-cards.css');
+@import url('../views/inicio.css');
+@import url('../views/menu.css');
+@import url('../views/historial.css');
+@import url('../views/perfil.css');
+@import url('../global.css');
+
+
+
+
+
+
+/* ============ VARIABLES Y ESTILOS BASE ============ */
+:root {
+    /* Colores principales */
+    --primary: #d7833d;         /* Azul morado principal */
+    --primary-light: #d88f06;   /* Versión más clara */
+    --primary-dark: #764c1c;    /* Versión más oscura */
+    --primary-gradient: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    
+    /* Colores secundarios */
+    --secondary: #7986cb;       /* Azul lavanda */
+    --success: #81c784;         /* Verde suave */
+    --info: #4fc3f7;           /* Azul claro */
+    --warning: #ffb74d;        /* Ámbar suave */
+    --danger: #e57373;         /* Rojo suave */
+    
+    /* Neutros */
+    --dark: #263238;           /* Azul muy oscuro */
+    --light: #eceff1;          /* Gris azulado claro */
+    
+    /* Fondo y texto */
+    --body-bg: #ececec;        /* Gris muy claro */
+    --card-bg: #ffffff;        /* Blanco puro */
+    --sidebar-bg: #65420a;     /* Azul noche */
+    --text-dark: #212121;      /* Casi negro */
+    --text-light: #f5f5f5;     /* Blanco roto */
+    
+    /* Efectos */
+    --transition: all 0.3s ease;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+    --card-border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-bs-theme="dark"] {
+    --body-bg: #121212;        /* Fondo oscuro */
+    --card-bg: #1e1e1e;        /* Tarjetas oscuras */
+    --sidebar-bg: #763f00;     /* Azul más intenso */
+    --text-dark: #e0e0e0;      /* Texto claro */
+    --text-light: #ffffff;     /* Blanco puro */
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.25), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    --card-border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ============ ESTILOS GENERALES ============ */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--body-bg);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    transition: var(--transition);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+}
+
+/* ============ CONTENIDO PRINCIPAL ============ */
+#content-client {
+    margin-left: 0;
+    min-height: 100vh;
+    transition: var(--transition);
+    padding-top: 20px;
+}
+
+
+/* ============ TABLA DE PEDIDOS MEJORADA ============ */
+.table-responsive {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+.table {
+    color: var(--text-dark);
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 0;
+}
+
+.table thead th {
+    border-bottom: none;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    padding: 1rem 1.25rem;
+    border: none;
+}
+
+.table thead th:first-child {
+    border-top-left-radius: 12px;
+}
+
+.table thead th:last-child {
+    border-top-right-radius: 12px;
+}
+
+.table tbody tr {
+    transition: all 0.2s ease;
+    background: var(--card-bg);
+}
+
+.table tbody tr:nth-child(even) {
+    background: rgba(255, 107, 0, 0.03);
+}
+
+.table tbody tr:hover {
+    background: rgba(255, 107, 0, 0.08) !important;
+    transform: translateX(5px);
+}
+
+.table td {
+    padding: 1rem 1.25rem;
+    vertical-align: middle;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.table-hover tbody tr:hover td {
+    border-color: rgba(255, 107, 0, 0.2);
+}
+
+.badge {
+    font-weight: 500;
+    padding: 0.35rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+}
+
+.badge.bg-success {
+    background: linear-gradient(135deg, #28a745, #218838);
+}
+
+
+@media (max-width: 576px) {
+
+/* ============ EFECTOS ESPECIALES ============ */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+.hover-zoom {
+    transition: transform 0.3s ease;
+}
+
+.hover-zoom:hover {
+    transform: scale(1.05);
+}
+
+.glow-on-hover {
+    transition: box-shadow 0.3s ease;
+}
+
+.glow-on-hover:hover {
+    box-shadow: 0 0 15px rgba(255, 107, 0, 0.5);
+}
+
+/* Efecto de onda al hacer clic */
+.wave-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.wave-effect:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .5s, opacity 1s;
+}
+
+.wave-effect:active:after {
+    transform: scale(0, 0);
+    opacity: .3;
+    transition: 0s;
+}
+}
+
+/* ============ RESPONSIVE MEJORADO ============ */
+
+
+@media (max-width: 768px) {
+
+    .col-md-4 {
+        margin-bottom: 1.5rem;
+    }
+    
+    .col-md-4.text-md-end {
+        text-align: left !important;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    
+    
+    
+
+    
+    .table thead {
+        display: none;
+    }
+    
+    .table, .table tbody, .table tr, .table td {
+        display: block;
+        width: 100%;
+    }
+    
+    .table tr {
+        margin-bottom: 1rem;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: var(--card-shadow);
+    }
+    
+    .table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        width: 45%;
+        padding-right: 1rem;
+        font-weight: 600;
+        text-align: left;
+        color: var(--primary);
+    }
+}

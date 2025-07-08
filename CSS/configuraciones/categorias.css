@@ -1,0 +1,550 @@
+/* Estilos para la interfaz de categorías - Versión Mejorada */
+:root {
+    --primary: #ff6b00;
+    --primary-light: #ff8c42;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #23b9d0;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --dark: #343a40;
+    --light: #f8f9fa;
+    --body-bg: #f5f7fa;
+    --card-bg: #ffffff;
+    --sidebar-bg: #503e2c;
+    --text-dark: #2d2d2d;
+    --text-light: #f8f9fa;
+    --transition: all 0.3s ease;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+    --card-border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--body-bg);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    transition: var(--transition);
+}
+
+
+
+[data-bs-theme="dark"] {
+    --body-bg: #2e1f1a;
+    --card-bg: #3e2b16;
+    --sidebar-bg: #f4a30e;
+    --text-dark: #e6e6e6;
+    --text-light: #f8f9fa;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
+    --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.25), 0 4px 6px -2px rgba(0, 0, 0, 0.15);
+    --card-border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Top Bar - Versión Mejorada */
+.top-bar {
+    background: var(--card-bg);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    border-radius: 0;
+    transition: var(--transition);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.top-bar:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#sidebarCollapse {
+    color: #000;
+   
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    transition: var(--transition);
+}
+
+
+
+
+.notifications {
+    position: relative;
+    cursor: pointer;
+}
+
+.notifications .badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: var(--danger);
+    color: rgb(245, 245, 245);
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 10px;
+}.top-bar:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#sidebarCollapse {
+    color: #000;
+   
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    transition: var(--transition);
+}
+
+
+
+
+.notifications {
+    position: relative;
+    cursor: pointer;
+}
+
+.notifications .badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: var(--danger);
+    color: rgb(245, 245, 245);
+    border-radius: 50%;
+    padding: 3px 6px;
+    font-size: 10px;
+}
+
+
+
+/* Formulario de agregar categoría - Versión Mejorada */
+#addCategoryForm {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--card-shadow);
+    border: var(--card-border);
+    transition: var(--transition);
+}
+
+#addCategoryForm:hover {
+    box-shadow: var(--card-shadow-hover);
+}
+
+#addCategoryForm .form-label {
+    font-weight: 500;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+#addCategoryForm .form-control {
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+    transition: var(--transition);
+}
+
+#addCategoryForm .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.25rem rgba(255, 107, 0, 0.25);
+}
+
+#addCategoryForm .form-check-input {
+    width: 2.5em;
+    height: 1.5em;
+    margin-top: 0.25em;
+}
+
+#addCategoryForm .form-check-input:checked {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+#addCategoryForm .btn-primary {
+    background-color: var(--primary);
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 6px rgba(255, 107, 0, 0.2);
+}
+
+#addCategoryForm .btn-primary:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(44, 140, 230, 0.3);
+}
+
+/* Tabla de categorías - Versión Mejorada */
+#categoriesTable {
+    --bs-table-bg: transparent;
+    --bs-table-striped-bg: rgba(255, 107, 0, 0.03);
+    --bs-table-hover-bg: rgba(255, 107, 0, 0.08);
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+}
+
+#categoriesTable thead th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    color: var(--secondary);
+    border-bottom: 2px solid var(--primary);
+    background-color: rgba(255, 107, 0, 0.05);
+    padding: 1rem 1.25rem;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+#categoriesTable tbody td {
+    padding: 1rem 1.25rem;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+#categoriesTable tbody tr {
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    border-left: 3px solid transparent;
+    backface-visibility: hidden;
+}
+
+#categoriesTable tbody tr:hover {
+    background: rgba(255, 107, 0, 0.08) !important;
+    transform: translateX(5px);
+    border-left: 3px solid var(--primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Badge de estado */
+.badge-status {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 0.35rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+}
+
+.badge-status.bg-success {
+    background-color: var(--success) !important;
+    box-shadow: 0 2px 4px rgba(40, 167, 69, 0.2);
+}
+
+.badge-status.bg-secondary {
+    background-color: var(--secondary) !important;
+    box-shadow: 0 2px 4px rgba(108, 117, 125, 0.2);
+}
+
+/* Botones de acción */
+.action-btns .btn {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.action-btns .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.action-btns .btn-outline-primary {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.action-btns .btn-outline-primary:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+.action-btns .btn-outline-danger {
+    color: var(--danger);
+    border-color: var(--danger);
+}
+
+.action-btns .btn-outline-danger:hover {
+    background-color: var(--danger);
+    color: white;
+}
+
+/* Paginación - Versión Mejorada */
+.pagination {
+    margin-top: 1.5rem;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    box-shadow: 0 2px 4px rgba(255, 107, 0, 0.3);
+}
+
+.pagination .page-link {
+    color: var(--primary);
+    border-radius: 8px;
+    margin: 0 3px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 0.5rem 0.75rem;
+    transition: var(--transition);
+}
+
+.pagination .page-link:hover {
+    background-color: rgba(255, 107, 0, 0.1);
+    border-color: var(--primary);
+}
+
+/* Modal de edición - Versión Mejorada */
+#editCategoryModal .modal-content {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    background-color: var(--card-bg);
+}
+
+#editCategoryModal .modal-header {
+    background-color: var(--primary);
+    color: white;
+    border-bottom: none;
+    padding: 1.25rem 1.5rem;
+}
+
+#editCategoryModal .modal-title {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+#editCategoryModal .btn-close {
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+#editCategoryModal .btn-close:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+#editCategoryModal .modal-body {
+    padding: 1.5rem;
+}
+
+#editCategoryModal .form-label {
+    font-weight: 500;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+#editCategoryModal .form-control {
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+    transition: var(--transition);
+}
+
+#editCategoryModal .form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.25rem rgba(255, 107, 0, 0.25);
+}
+
+#editCategoryModal .form-switch .form-check-input {
+    width: 3em;
+    height: 1.5em;
+    margin-left: -0.5em;
+}
+
+#editCategoryModal .modal-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1rem 1.5rem;
+}
+
+#editCategoryModal .btn-secondary {
+    background-color: var(--secondary);
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.25rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+#editCategoryModal .btn-secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+#editCategoryModal .btn-primary {
+    background-color: var(--primary);
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 6px rgba(255, 107, 0, 0.2);
+}
+
+#editCategoryModal .btn-primary:hover {
+    background-color: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 107, 0, 0.3);
+}
+
+/* Toast notification - Versión Mejorada */
+.toast {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: none;
+    background-color: var(--success) !important;
+    color: white;
+    overflow: hidden;
+    position: relative;
+}
+
+.toast::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.toast-body {
+    font-weight: 500;
+    padding: 1rem 1.25rem;
+}
+
+.btn-close-white {
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    transition: var(--transition);
+}
+
+.btn-close-white:hover {
+    opacity: 1;
+}
+
+/* Botón de refrescar */
+#refreshBtn {
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+#refreshBtn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: rotate(90deg);
+}
+
+#refreshBtn:active {
+    transform: rotate(360deg);
+}
+
+/* Efectos especiales */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.table-row-animation {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Versión móvil */
+@media (max-width: 768px) {
+    .top-bar {
+        padding: 10px 15px;
+    }
+    
+    #addCategoryForm {
+        padding: 1rem;
+    }
+    
+    #addCategoryForm .row {
+        flex-direction: column;
+    }
+    
+    #addCategoryForm .col-md-1 {
+        margin-top: 1rem;
+        align-self: flex-end;
+    }
+    
+    #categoriesTable thead th, 
+    #categoriesTable tbody td {
+        padding: 0.75rem;
+    }
+    
+    .action-btns .btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+    }
+    
+    .pagination .page-link {
+        padding: 0.375rem 0.5rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 576px) {
+    #addCategoryForm .form-label {
+        font-size: 0.8rem;
+    }
+    
+    #categoriesTable thead th {
+        font-size: 0.7rem;
+    }
+    
+    #categoriesTable tbody td {
+        font-size: 0.875rem;
+    }
+    
+    .badge-status {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+
+/* Personalización de SweetAlert2 para que coincida con tu tema */
+.swal2-popup {
+    border-radius: 12px !important;
+    box-shadow: var(--card-shadow-hover) !important;
+    border: var(--card-border) !important;
+}
+
+.swal2-toast {
+    background: var(--card-bg) !important;
+    color: var(--text-dark) !important;
+    box-shadow: var(--card-shadow-hover) !important;
+    border: var(--card-border) !important;
+    border-left: 4px solid var(--primary) !important;
+}
+
+.swal2-icon.swal2-success {
+    color: var(--success) !important;
+    border-color: var(--success) !important;
+}
+
+.swal2-icon.swal2-error {
+    color: var(--danger) !important;
+    border-color: var(--danger) !important;
+}
+
+.swal2-title {
+    color: var(--primary) !important;
+    font-weight: 600 !important;
+}
+
+.swal2-timer-progress-bar {
+    background: var(--primary) !important;
+}

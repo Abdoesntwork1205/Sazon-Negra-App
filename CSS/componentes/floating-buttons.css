@@ -1,0 +1,129 @@
+/* ============ BOTONES FLOTANTES ============ */
+.floating-buttons {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 1000;
+}
+
+/* Estilo base para todos los botones flotantes */
+.floating-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50% !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+}
+
+.floating-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Badge para el contador de pedidos */
+.order-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff0000;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Contenedor y animación para redes sociales */
+.floating-social-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-buttons {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    bottom: 70px;
+    animation: fadeInUp 0.3s ease;
+}
+
+.floating-social-container.show .social-buttons {
+    display: flex;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos específicos para cada botón */
+.floating-btn.whatsapp {
+    background-color: #25D366;
+}
+
+.floating-btn.order-summary {
+    background-color: #ff6b00;
+}
+
+.floating-btn.social-toggle {
+    background-color: #6c757d;
+}
+
+.floating-btn.facebook {
+    background-color: #3b5998;
+}
+
+.floating-btn.instagram {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+
+.floating-btn.twitter {
+    background-color: #1DA1F2;
+}
+
+/* Asegurarse que ningún otro estilo sobrescriba el redondeado */
+.floating-btn, 
+.floating-btn *,
+.floating-btn:hover,
+.floating-btn:focus {
+  border-radius: 50% !important;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .floating-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .order-badge {
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+    }
+}

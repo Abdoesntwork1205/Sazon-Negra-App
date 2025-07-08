@@ -1,0 +1,307 @@
+/* Archivo: assets/css/views/historial.css */
+/* Estilos para la vista de historial de pedidos */
+
+.historial-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.historial-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.historial-title {
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+    margin: 0;
+}
+
+.historial-filter {
+    display: flex;
+    gap: 10px;
+}
+
+.historial-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.historial-table th {
+    background-color: var(--primary);
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.historial-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.historial-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.historial-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.bg-entregado {
+    background-color: #28a745;
+    color: white;
+}
+
+.bg-proceso {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.bg-cancelado {
+    background-color: #dc3545;
+    color: white;
+}
+
+.historial-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.historial-empty {
+    text-align: center;
+    padding: 40px;
+    color: #6c757d;
+}
+
+.historial-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 5px;
+}
+
+/* Archivo actualizado: assets/css/views/historial.css */
+
+/* Estilos base para la tabla de historial */
+.historial-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.historial-table thead th {
+    border-bottom: none;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    padding: 1rem 1.25rem;
+    border: none;
+}
+
+.historial-table thead th:first-child {
+    border-top-left-radius: 12px;
+}
+
+.historial-table thead th:last-child {
+    border-top-right-radius: 12px;
+}
+
+.historial-table tbody tr {
+    transition: all 0.2s ease;
+    background: var(--card-bg);
+}
+
+.historial-table tbody tr:nth-child(even) {
+    background: rgba(255, 107, 0, 0.03);
+}
+
+/* Efecto hover - similar al de últimos pedidos */
+.historial-table tbody tr:hover {
+    background: rgba(255, 107, 0, 0.08) !important;
+    transform: translateX(5px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.historial-table td {
+    padding: 1rem 1.25rem;
+    vertical-align: middle;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.historial-table tbody tr:hover td {
+    border-color: rgba(255, 107, 0, 0.2);
+}
+
+/* Estilos para los badges */
+.historial-badge {
+    font-weight: 500;
+    padding: 0.35rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover para los botones de acción */
+.historial-actions .btn {
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+.historial-actions .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Efecto especial para el botón de repetir */
+.historial-actions .btn-outline-primary:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Efecto especial para el botón de repetir */
+/* Estilos para el modal de detalles */
+#detallesPedidoModal .modal-content {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+#detallesPedidoModal .modal-header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white;
+    border-bottom: none;
+    padding: 1.25rem;
+}
+
+#detallesPedidoModal .modal-title {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+#detallesPedidoModal .modal-body {
+    padding: 1.5rem;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+#detallesPedidoModal .modal-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 1rem 1.5rem;
+}
+
+/* Estilos para la tabla de detalles */
+.detalles-table {
+    width: 100%;
+}
+
+.detalles-table th {
+    font-weight: 500;
+    color: var(--text-muted);
+    width: 30%;
+}
+
+.detalles-table td {
+    font-weight: 400;
+}
+
+/* Estilos para los productos */
+.producto-detalle {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.producto-detalle:hover {
+    background-color: rgba(255, 107, 0, 0.05);
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    #detallesPedidoModal .modal-dialog {
+        margin: 0.5rem;
+    }
+    
+    #detallesPedidoModal .modal-body {
+        padding: 1rem;
+    }
+    
+    #detallesPedidoModal .row > div {
+        width: 100%;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .historial-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .historial-table thead {
+        display: none;
+    }
+    
+    .historial-table, .historial-table tbody, .historial-table tr, .historial-table td {
+        display: block;
+        width: 100%;
+    }
+    
+    .historial-table tr {
+        margin-bottom: 1rem;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: var(--card-shadow);
+    }
+    
+    .historial-table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    
+    .historial-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 1rem;
+        width: 45%;
+        padding-right: 1rem;
+        font-weight: 600;
+        text-align: left;
+        color: var(--primary);
+    }
+    
+    /* Ajuste para el hover en móvil */
+    .historial-table tbody tr:hover {
+        transform: none;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .historial-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .historial-filter {
+        flex-direction: column;
+    }
+}

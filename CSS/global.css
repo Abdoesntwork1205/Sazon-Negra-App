@@ -1,0 +1,57 @@
+/* ============ BOOTSTRAP FIXES ============ */
+
+.btn-outline-primary {
+  border: var(--bs-btn-border-width) solid var(--primary) !important;
+}
+.btn-outline-primary:not(.active) {
+  color: var(--primary) !important;
+}
+
+.btn:hover {
+  color: var(--bs-btn-hover-color) !important;
+  background-color: var(--primary) !important;
+  border-color: var(--text-light) !important;
+}
+
+.btn-primary {
+  color: var(--text-light) !important; 
+  border: var(--bs-btn-border-width) solid var(--primary) !important;
+  background-color: var(--primary) !important;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary) !important;
+  border-color: var(--primary) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.breadcrumb .fas.fa-home {
+  color: var(--primary) !important;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.alert {
+  color: var(--primary) !important;
+  background-color: rgba(243, 162, 31, 0.4) !important;
+  border-color: var(--primary) !important;
+}
+
+.dropdown-item:active {
+  background-color: var(--primary) !important;
+}
+
+.swal2-confirm {
+  background-color: var(--primary) !important;
+}
+
+.form-select:focus {
+  border-color: var(--primary);
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(215, 131, 61, 0.25);
+}
