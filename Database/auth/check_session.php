@@ -6,21 +6,17 @@ ob_start();
 
 // Verificar si el usuario está logueado (compatible con ambos sistemas)
 if (!isset($_SESSION['userData'])) {
-    // Si no hay userData, verificar el sistema antiguo
-    if (!isset($_SESSION['user'])) {
-        ob_end_clean();
-        header("Location: ../../VIEWS/Auth/login.php");
-        exit();
-    } else {
+        // Si no hay userData, verificar el sistema antiguo
         // Convertir el sistema antiguo al nuevo formato
-        $_SESSION['userData'] = [
-            'id' => $_SESSION['user']['id'] ?? 0,
-            'nombre' => $_SESSION['user']['nombre'] ?? '',
-            'correo' => $_SESSION['user']['correo'] ?? '',
-            'tipo' => $_SESSION['user']['tipo'] ?? 'clientes',
-            'rol' => $_SESSION['user']['rol'] ?? 'cliente'
-        ];
-    }
+        if (isset($_SESSION['user'])) {
+            $_SESSION['userData'] = [
+                'id' => $_SESSION['user']['id'] ?? 0,
+                'nombre' => $_SESSION['user']['nombre'] ?? '',
+                'correo' => $_SESSION['user']['correo'] ?? '',
+                'tipo' => $_SESSION['user']['tipo'] ?? 'clientes',
+                'rol' => $_SESSION['user']['rol'] ?? 'cliente'
+            ];
+        }
 }
 
 // Definir permisos por rol (compatible con ambos sistemas)
@@ -72,12 +68,14 @@ if (array_key_exists($currentPage, $pagePermissions)) {
             'cajero' => '../configuraciones/crear-orden.php',
             'encargado' => '../configuraciones/dashboard.php',
             'administracion' => '../configuraciones/reportes.php',
-            'cliente' => '../index.php'
+            'cliente' => '../../VIEWS/index.php'
         ];
         
-        $redirectPage = $defaultRoutes[$userRole] ?? '../../VIEWS/Auth/login.php';
-        header("Location: $redirectPage");
-        exit();
+        $redirectPage = $defaultRoutes[$userRole] ?? null;
+        if($redirectPage) {
+            header("Location: $redirectPage");
+            exit();
+        }
     }
 }
 

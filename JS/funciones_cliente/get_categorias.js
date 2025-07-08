@@ -3,7 +3,8 @@ function initMenuPage() {
     const menuState = {
         currentCategory: 'all',
         currentPage: 1,
-        productsPerPage: 8
+        productsPerPage: 8,
+        sort: 'sortRelevant'
     };
     
     // Cargar categorías y productos
@@ -75,7 +76,8 @@ function initMenuPage() {
         
         const params = {
             pagina: state.currentPage,
-            porPagina: state.productsPerPage
+            porPagina: state.productsPerPage,
+            sort: state.sort
         };
         
         if (state.currentCategory !== 'all') {
@@ -182,6 +184,13 @@ function initMenuPage() {
             } else {
                 $(`.category-item[data-category="${menuState.currentCategory}"]`).addClass('active');
             }
+        });
+
+        $('input[name="sortOption"]').on('change', function() {
+            const sortId = $(this).attr('id');
+            menuState.sort = sortId
+            menuState.currentPage = 1
+            loadProducts(menuState);
         });
     }
     

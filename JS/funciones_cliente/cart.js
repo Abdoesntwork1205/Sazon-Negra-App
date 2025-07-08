@@ -122,6 +122,16 @@ const Cart = {
     // Configurar listeners globales para botones "Añadir al carrito"
     setupGlobalListeners() {
         $(document).on('click', '[data-add-to-cart], .btn-add-to-cart, [data-id]', function() {
+            const userData = JSON.parse(sessionStorage.getItem('userData'))
+            console.log("Usuario en CartManager:", userData);
+            if(
+                !userData ||
+                (Array.isArray(userData) && userData.length === 0) ||
+                (typeof userData === 'object' && Object.keys(userData).length === 0)
+            ) {
+                window.location.href = '../VIEWS/Auth/login.php';
+                return;
+            }
         const $btn = $(this);
         const productId = $btn.data('id') || $btn.data('add-to-cart');
         

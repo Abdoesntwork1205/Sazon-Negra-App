@@ -18,13 +18,21 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-view="menu"><i class="fas fa-utensils me-1"></i> Menú</a>
                 </li>
+                <?php
+                    if(isset($_SESSION['userData'])) {
+                ?>
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-view="historial"><i class="fas fa-history me-1"></i> Historial</a>
                 </li>
-                
+                <?php
+                    }
+                ?>
             </ul>
             
             <div class="d-flex align-items-center">
+                <?php
+                    if(isset($_SESSION['userData'])) {
+                ?>
                 <!-- Notificaciones mejoradas -->
                 <div class="notifications me-3">
                     <div class="notification-icon-wrapper border border-light" id="notificationsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -41,7 +49,6 @@
                         </li>
                     </ul>
                 </div>
-                
                 <div class="dropdown">
                     <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle text-white" id="userDropdown" data-bs-toggle="dropdown">
                         <div class="avatar-circle bg-primary text-white" id="user-avatar-initials">
@@ -69,6 +76,18 @@
                     <i class="fas fa-shopping-cart me-1"></i>
                     <span class="badge bg-white text-primary">2</span>
                 </a>
+                <?php
+                    } else {
+                ?>
+                <a href="../VIEWS/Auth/login.php" class="btn btn-warning border border-light">
+                    <i class="fas fa-sign-in-alt me-1"></i> Iniciar Sesión
+                </a>
+                <a href="../VIEWS/Auth/registro.php" class="btn btn-secondary ms-2 border border-light">
+                    <i class="fas fa-user-plus me-1"></i> Registrarse   
+                </a>
+                <?php
+                    }
+                ?>
             </div>
         </div>
     </div>

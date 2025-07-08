@@ -5,7 +5,7 @@ ob_start(); // Activa el buffer de salida
 require_once '../Database/auth/check_session.php';
 
 // Ahora puedes usar $_SESSION['userData'] en todo tu código
-$user = $_SESSION['userData'];
+$user = isset($_SESSION['userData']) ? $_SESSION['userData'] : null;
 ?>
 <!DOCTYPE html>
 
@@ -20,12 +20,6 @@ $user = $_SESSION['userData'];
     
     <?php 
     // Modificar el top-bar para mostrar información del usuario
-    $topBarData = [
-        'userName' => $user['nombre'],
-        'userEmail' => $user['correo'],
-        'userType' => $user['tipo'],
-        'userPoints' => isset($user['puntos']) ? $user['puntos'] : 0
-    ];
     include '../includes/top-bar.php'; 
     ?>
     
@@ -40,7 +34,7 @@ $user = $_SESSION['userData'];
 
     <script>
         // Pasar datos del usuario a JavaScript
-        const userData = <?php echo json_encode($user); ?>;
+        var userData = <?php echo json_encode($user); ?>;
         
         
         document.addEventListener('DOMContentLoaded', function() {

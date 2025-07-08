@@ -21,8 +21,14 @@
     </div>
     
     <!-- Botón flotante del pedido -->
+    <?php
+        if(isset($_SESSION['userData'])) {
+    ?>
     <button class="floating-btn order-summary" id="openSidebar">
         <i class="fas fa-receipt"></i>
         <span class="order-badge">2</span>
     </button>
+    <?php
+        }
+    ?>
 </div>

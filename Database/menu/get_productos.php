@@ -23,8 +23,18 @@ try {
     // Parámetros
     $pagina = isset($_GET['pagina']) ? max(1, intval($_GET['pagina'])) : 1;
     $porPagina = isset($_GET['porPagina']) ? max(1, intval($_GET['porPagina'])) : 8;
+    $sort = isset($_GET['sort']) ? $_GET['sort'] : 'sortRelevant';
     $offset = ($pagina - 1) * $porPagina;
     $categoriaId = isset($_GET['categoria_id']) ? intval($_GET['categoria_id']) : null;
+
+    $orderClause = "";
+    if ($sort === 'sortPriceLow') {
+        $orderClause = "ORDER BY m.precio ASC";
+    } elseif ($sort === 'sortPriceHigh') {
+        $orderClause = "ORDER BY m.precio DESC";
+    } elseif ($sort === 'sortRelevant') {
+        $orderClause = "ORDER BY m.destacado DESC";
+    }
 
     // 1. Obtener productos más vendidos por categoría
     $sqlTop = "SELECT 
@@ -37,7 +47,7 @@ try {
               WHERE p.estado = 'confirmado'
               GROUP BY pm.menu_id, m.categoria_id
               ORDER BY m.categoria_id, total_vendido DESC";
-    
+
     $resultTop = $conn->query($sqlTop);
     if (!$resultTop) {
         throw new Exception("Error en consulta top: " . $conn->error);
@@ -66,14 +76,13 @@ try {
               c.nombre as categoria_nombre
               FROM menu m
               JOIN categorias c ON m.categoria_id = c.id
-              WHERE m.disponible = 1";
+              WHERE m.disponible = 1 ";
     
     if ($categoriaId) {
-        $query .= " AND m.categoria_id = $categoriaId";
+        $query .= " AND m.categoria_id = $categoriaId ";
     }
-    
-    $query .= " ORDER BY m.destacado DESC, m.titulo ASC
-               LIMIT $offset, $porPagina";
+    $query .= $orderClause;
+    $query .= " LIMIT $offset, $porPagina";
     
     $result = $conn->query($query);
     if (!$result) {
