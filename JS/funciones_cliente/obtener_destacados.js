@@ -47,29 +47,58 @@ function mostrarProductosDestacados(productos) {
 
     productos.forEach(producto => {
         $contenedor.innerHTML += `
-            <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
-                <div class="product-card">
-                    ${producto.destacado ? '<div class="product-badge">DESTACADO</div>' : ''}
-                    ${producto.mas_vendido ? '<div class="product-badge bg-success">MÁS VENDIDO</div>' : ''}
-                    <div class="product-img">
-                        <img src="${producto.imagen}" alt="${producto.nombre}" onerror="this.src='img/default-food.jpg'">
-                    </div>
-                    <div class="product-body">
-                        <h5 class="product-title">${producto.nombre}</h5>
-                        <p class="product-desc">${producto.descripcion}</p>
-                        <div class="product-footer">
-                            <span class="product-price">$${producto.precio.toFixed(2)}</span>
-                            <button class="btn btn-sm btn-primary btn-add-to-cart" 
-                                    data-id="${producto.id}"
-                                    data-name="${producto.nombre}"
-                                    data-price="${producto.precio}"
-                                    data-image="${producto.imagen}"
-                                    data-description="${producto.descripcion}">
-                                <i class="fas fa-plus"></i> Añadir
-                            </button>
+            <div class="product-card-click-event col-md-6 col-lg-4 col-xl-3 mb-4">
+                <div class="product-card-modal">
+                    <div class="product-card modal-content">
+                        <button class="product-card-modal-btn-close">
+                            <i class="fas fa-xmark"></i>
+                        </button>
+                        ${producto.destacado ? '<div class="product-badge">DESTACADO</div>' : ''}
+                        ${producto.mas_vendido ? '<div class="product-badge bg-success">MÁS VENDIDO</div>' : ''}
+                        <div class="product-img">
+                            <img src="${producto.imagen}" alt="${producto.nombre}" onerror="this.src='img/default-food.jpg'">
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">${producto.nombre}</h5>
+                            <p class="product-desc">${producto.descripcion}</p>
+                            <div class="product-footer">
+                                <span class="product-price">$${producto.precio.toFixed(2)}</span>
+                                <button class="btn btn-sm btn-primary btn-add-to-cart" 
+                                        data-id="${producto.id}"
+                                        data-name="${producto.nombre}"
+                                        data-price="${producto.precio}"
+                                        data-image="${producto.imagen}"
+                                        data-description="${producto.descripcion}">
+                                    <i class="fas fa-plus"></i> Añadir
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+
+                    <div class="product-card">
+                        ${producto.destacado ? '<div class="product-badge">DESTACADO</div>' : ''}
+                        ${producto.mas_vendido ? '<div class="product-badge bg-success">MÁS VENDIDO</div>' : ''}
+                        <div class="product-img">
+                            <img src="${producto.imagen}" alt="${producto.nombre}" onerror="this.src='img/default-food.jpg'">
+                        </div>
+                        <div class="product-body">
+                            <h5 class="product-title">${producto.nombre}</h5>
+                            <p class="product-desc">${producto.descripcion}</p>
+                            <div class="product-footer">
+                                <span class="product-price">$${producto.precio.toFixed(2)}</span>
+                                <button class="btn btn-sm btn-primary btn-add-to-cart" 
+                                        data-id="${producto.id}"
+                                        data-name="${producto.nombre}"
+                                        data-price="${producto.precio}"
+                                        data-image="${producto.imagen}"
+                                        data-description="${producto.descripcion}">
+                                    <i class="fas fa-plus"></i> Añadir
+                                </button>
+                            </div>
+                        </div>
+                    </div>
             </div>
         `;
     });

@@ -4,7 +4,7 @@
             <img src="../../logoi.png" alt="Logo" class="navbar-icon me-2">El Sazón de la Negra
         </a>
         <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon ms-2"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">

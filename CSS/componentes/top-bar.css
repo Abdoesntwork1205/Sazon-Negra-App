@@ -60,17 +60,16 @@
 
 
 .top-bar-client .navbar-brand img {
-    border: 2px solid white;
     width: 40px;
     height: 40px;
+    transform: scale(1.5);
     object-fit: contain;
     margin-right: 0.75rem;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .top-bar-client .navbar-brand:hover img {
-    transform: rotate(15deg);
+    transform: rotate(15deg) scale(1.6);
 }
 
 .top-bar-client .nav-link {

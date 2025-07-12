@@ -8,17 +8,19 @@ body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background-color: #161616;
-    background-image: 
-        radial-gradient(circle at 10% 20%,  0%, transparent 25%),
-        radial-gradient(circle at 90% 80%, rgba(192, 130, 92, 0.08) 0%, transparent 25%);
-    background-size: 300% 300%;
-    animation: gradientFlow 18s ease infinite;
 }
 
-@keyframes gradientFlow {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+.background-image {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    display: block;
+    background-image: url('../../img/background.gif');
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    filter: blur(5px) brightness(0.1);
 }
 
 /* Contenedor principal */
@@ -64,19 +66,17 @@ body {
 /* Estilo del icono */
 #login-icon {
     width: auto;
-    height: 180px;
+    height: 360px;
     object-fit: contain;
     display: block;
-    margin: 0 auto 2rem;
-    border: 5px solid transparent;
-    border-radius: 50%;
+    margin: 0 auto 1.8rem;
     padding: 8px;
-    background: 
-        linear-gradient(#fff, #fff) padding-box,
-        linear-gradient(135deg, #ffc800, #c8802e) border-box;
-    animation: iconGlow 3s ease-in-out infinite alternate;
-    filter: drop-shadow(0 0 15px rgba(181, 120, 74, 0.3));
+    filter: drop-shadow(0 0 24px rgba(181, 120, 74, 0.5));
     transition: transform 0.3s ease;
+}
+
+#login-icon:hover {
+    transform: scale(1.05);
 }
 
 @keyframes iconGlow {
@@ -153,6 +153,18 @@ body {
 
 .toggle-password:hover, .toggle-confirm-password:hover {
     color: #ab7c39 !important;
+}
+
+a {
+    color: #d88f06;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+a:hover {
+    color: #ffc800;
+    text-decoration: underline;
 }
 
 /* Botón de registro */

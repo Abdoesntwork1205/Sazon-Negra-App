@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../../CSS/Login/login.css">
 </head>
 <body>
+    <div class='background-image'></div>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 col-lg-4">

@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <a class="navbar-brand" href="#" data-view="inicio">
             <img src="../logoi.png" alt="Logo" class="rounded-circle me-2">
-            <span>El Sazón de la Negra</span>
+            <span class='ms-2'>El Sazón de la Negra</span>
         </a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarClient">

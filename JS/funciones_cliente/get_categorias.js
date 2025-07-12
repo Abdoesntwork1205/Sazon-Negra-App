@@ -294,33 +294,61 @@ function initMenuPage() {
             ).join('');
             
             $('#productos-container').append(`
-                <div class="col-md-6 col-lg-4 col-xl-3 mb-4">
-                    <div class="product-card-container">
-                        ${badgesHTML}
-                        <div class="product-img-container">
-                            <img src="${producto.imagen || 'img/default-food.jpg'}" alt="${producto.nombre}">
-                        </div>
-                        <div class="product-body-container">
-                            <h5 class="product-title-container">${producto.nombre}</h5>
-                            <p class="product-desc-container">${producto.descripcion || 'Delicioso platillo'}</p>
-                            <div class="product-footer-container">
-                                <span class="product-price-container">
-                                    ${producto.en_promocion ? 
-                                        `<del class="text-muted small">$${precioOriginal.toFixed(2)}</del><br>` : ''}
-                                    $${producto.precio.toFixed(2)}
-                                </span>
-                                <button class="btn btn-sm btn-primary btn-add-to-cart" 
-                                        data-id="${producto.id}"
-                                        data-name="${producto.nombre}"
-                                        data-price="${producto.precio}"
-                                        data-image="${producto.imagen || 'img/default-food.jpg'}"
-                                        data-description="${producto.descripcion || 'Delicioso platillo'}">
-                                    <i class="fas fa-plus"></i> Añadir
-                                </button>
+                <div class="col-md-6 col-lg-4 col-xl-3 mb-4 product-card-click-event">
+                    <div class="product-card-modal">
+                        <div class="product-card modal-content">
+                            <button class="product-card-modal-btn-close">
+                                <i class="fas fa-xmark"></i>
+                            </button>
+                            ${producto.destacado ? '<div class="product-badge">DESTACADO</div>' : ''}
+                            ${producto.mas_vendido ? '<div class="product-badge bg-success">MÁS VENDIDO</div>' : ''}
+                            <div class="product-img">
+                                <img src="${producto.imagen}" alt="${producto.nombre}" onerror="this.src='img/default-food.jpg'">
+                            </div>
+                            <div class="product-body">
+                                <h5 class="product-title">${producto.nombre}</h5>
+                                <p class="product-desc">${producto.descripcion}</p>
+                                <div class="product-footer">
+                                    <span class="product-price">$${producto.precio.toFixed(2)}</span>
+                                    <button class="btn btn-sm btn-primary btn-add-to-cart" 
+                                            data-id="${producto.id}"
+                                            data-name="${producto.nombre}"
+                                            data-price="${producto.precio}"
+                                            data-image="${producto.imagen}"
+                                            data-description="${producto.descripcion}">
+                                        <i class="fas fa-plus"></i> Añadir
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+
+                        <div class="product-card-container">
+                            ${badgesHTML}
+                            <div class="product-img-container">
+                                <img src="${producto.imagen || 'img/default-food.jpg'}" alt="${producto.nombre}">
+                            </div>
+                            <div class="product-body-container">
+                                <h5 class="product-title-container">${producto.nombre}</h5>
+                                <p class="product-desc-container">${producto.descripcion || 'Delicioso platillo'}</p>
+                                <div class="product-footer-container">
+                                    <span class="product-price-container">
+                                        ${producto.en_promocion ? 
+                                            `<del class="text-muted small">$${precioOriginal.toFixed(2)}</del><br>` : ''}
+                                        $${producto.precio.toFixed(2)}
+                                    </span>
+                                    <button class="btn btn-sm btn-primary btn-add-to-cart" 
+                                            data-id="${producto.id}"
+                                            data-name="${producto.nombre}"
+                                            data-price="${producto.precio}"
+                                            data-image="${producto.imagen || 'img/default-food.jpg'}"
+                                            data-description="${producto.descripcion || 'Delicioso platillo'}">
+                                        <i class="fas fa-plus"></i> Añadir
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             `);
         });
     }

@@ -165,8 +165,24 @@ const Cart = {
             }, 500);
         }
     });
-    
+
+    $(document).on('click', '.product-card-click-event', function(e) {
+        const $target = $(e.currentTarget);
+        const $productCard = $target.find('.product-card-modal').first();
+        console.log('Producto clickeado:', $target, $productCard);
+        if (!$productCard.hasClass('product-card-modal-active')) {
+            $productCard.addClass('product-card-modal-active');
+        }
+    })
+
+    $(document).on('click', '.product-card-modal-btn-close', function(e) {
+        e.stopPropagation(); // Evitar que el evento se propague al padre
+        const $productCard = $(this).closest('.product-card-modal');
+        console.log('Cerrando modal de producto:', $productCard);
+        $productCard.removeClass('product-card-modal-active');
+    });
     },
+    
     
     // Renderizar la sidebar del carrito
     renderSidebar() {

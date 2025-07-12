@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../../CSS/Login/recuperacion.css">
 </head>
 <body>
+    <div class='background-image'></div>
     <div class="container">
         <div class="row">
             <div class="col s12 m8 l6 offset-m2 offset-l3">
@@ -102,7 +103,7 @@
                         </div>
                         
                         <div class="center-align mt-3">
-                            <p>¿Recordaste tu contraseña? <a href="login.php" class="teal-text text-accent-4">Inicia Sesión</a></p>
+                            <p>¿Recordaste tu contraseña? <a href="login.php" class="text-decoration-none">Inicia Sesión</a></p>
                         </div>
                     </div>
                 </div>

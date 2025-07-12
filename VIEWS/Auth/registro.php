@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../../CSS/Login/registro.css">
 </head>
 <body>
+    <div class='background-image'></div>
     <div class="container">
         <div class="row">
             <div class="col s12 m8 l6 offset-m2 offset-l3">
@@ -123,7 +124,7 @@
                         </form>
                         
                         <div class="center-align mt-3">
-                            <p>¿Ya tienes una cuenta? <a href="login.php" class="teal-text text-accent-4">Inicia Sesión</a></p>
+                            <p>¿Ya tienes una cuenta? <a href="login.php" class="text-decoration-none">Inicia Sesión</a></p>
                         </div>
                     </div>
                 </div>
