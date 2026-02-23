@@ -1,4 +1,4 @@
-# Sistema Integral para "El Sazón de la Negra", Local de Comida Rápida en Barinas, Venezuela
+# Sistema Integral para "El Sazón de la Negra" - Local de Comida Rápida en Barinas, Venezuela
 
 🍔 Proyecto Integral: El Sazón de la Negra
 
