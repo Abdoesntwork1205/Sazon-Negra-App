@@ -1,4 +1,4 @@
-#Sistema Integral para "El Sazón de la Negra", Local de Comida Rápida
+# Sistema Integral para "El Sazón de la Negra", Local de Comida Rápida
 
 🍔 Proyecto Integral: El Sazón de la Negra
 
