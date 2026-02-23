@@ -1,4 +1,7 @@
-🍔 Proyecto Integral: El Sazón de la Negra¡Bienvenido al repositorio oficial del sistema de gestión para El Sazón de la Negra! Este proyecto nace en el corazón de Barinas, Venezuela, con el objetivo de digitalizar la experiencia de la comida rápida llanera, optimizando desde la toma de pedidos hasta el control de inventario.
+#Sistema Integral para "El Sazón de la Negra", Local de Comida Rápida
+🍔 Proyecto Integral: El Sazón de la Negra
+
+¡Bienvenido al repositorio oficial del sistema de gestión para El Sazón de la Negra! Este proyecto nace en el corazón de Barinas, Venezuela, con el objetivo de digitalizar la experiencia de la comida rápida llanera, optimizando desde la toma de pedidos hasta el control de inventario.
 
 ----------------------------------------------------------------------------------------------------
 📝 Descripción del Proyecto: Este sistema es una solución integral "Full Stack" diseñada para manejar el flujo operativo de un puesto de comida rápida de alto volumen. Combina la rapidez de JavaScript en el cliente, la robustez de PHP en el servidor, y la seguridad avanzada que ofrece Hack (HHVM) para procesos críticos de datos. El software permite gestionar:
