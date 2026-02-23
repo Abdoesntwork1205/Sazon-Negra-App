@@ -22,7 +22,7 @@ Panel Administrativo: Reportes de ventas y gestión de usuarios.
 
 🛠️ Instalación y Configuración: Si deseas replicar este entorno localmente, sigue estos pasos:
 
-Clonar el repositorio: Bashgit clone https://github.com/tu-usuario/el-sazon-de-la-negra.git
+Clonar el repositorio: Bashgit clone https://github.com/Abdoesntwork1205/sazon-negra-app.git
 
 Configurar el servidor: Asegúrate de tener instalado HHVM para el soporte de Hack. Servidor Apache o Nginx con PHP 8.0+.
 
