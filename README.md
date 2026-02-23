@@ -39,7 +39,7 @@ Base de Datos: Importa el archivo database/schema.sql en tu gestor de MySQL.
 Variables de Entorno: Renombra el archivo .env.example a .env y configura tus credenciales de base de datos.
 
 ----------------------------------------------------------------------------------------------------
-📂 Estructura de Directorios
+📂 Estructura de Directorios:
 
 Plaintext├── assets/             # Imágenes, CSS y Scripts de JS
 ├── core/               # Lógica en PHP y definiciones en Hack
