@@ -24,11 +24,15 @@ Panel Administrativo: Reportes de ventas y gestión de usuarios.
 
 Clonar el repositorio: Bashgit clone https://github.com/tu-usuario/el-sazon-de-la-negra.git
 
-Configurar el servidor: Asegúrate de tener instalado HHVM para el soporte de Hack.Servidor Apache o Nginx con PHP 8.0+.
+Configurar el servidor: Asegúrate de tener instalado HHVM para el soporte de Hack. Servidor Apache o Nginx con PHP 8.0+.
 
-Base de Datos:Importa el archivo database/schema.sql en tu gestor de MySQL.Variables de Entorno:Renombra el archivo .env.example a .env y configura tus credenciales de base de datos.📂 Estructura de 
+Base de Datos: Importa el archivo database/schema.sql en tu gestor de MySQL.
 
-DirectoriosPlaintext├── assets/             # Imágenes, CSS y Scripts de JS
+Variables de Entorno: Renombra el archivo .env.example a .env y configura tus credenciales de base de datos.
+
+📂 Estructura de Directorios
+
+Plaintext├── assets/             # Imágenes, CSS y Scripts de JS
 ├── core/               # Lógica en PHP y definiciones en Hack
 ├── includes/           # Componentes reutilizables (headers, footers)
 ├── sql/                # Scripts de creación de base de datos
