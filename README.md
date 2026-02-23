@@ -1,4 +1,5 @@
 #Sistema Integral para "El Sazón de la Negra", Local de Comida Rápida
+
 🍔 Proyecto Integral: El Sazón de la Negra
 
 ¡Bienvenido al repositorio oficial del sistema de gestión para El Sazón de la Negra! Este proyecto nace en el corazón de Barinas, Venezuela, con el objetivo de digitalizar la experiencia de la comida rápida llanera, optimizando desde la toma de pedidos hasta el control de inventario.
